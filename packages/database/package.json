@@ -1,0 +1,47 @@
+{
+  "name": "@car-dealer/database",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "prisma"
+  ],
+  "scripts": {
+    "generate": "dotenv -e ../../.env -- prisma generate",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests",
+    "migrate:dev": "dotenv -e ../../.env -- prisma migrate dev",
+    "migrate:deploy": "dotenv -e ../../.env -- prisma migrate deploy",
+    "migrate:status": "dotenv -e ../../.env -- prisma migrate status",
+    "seed": "dotenv -e ../../.env -- tsx prisma/seed.ts",
+    "studio": "dotenv -e ../../.env -- prisma studio",
+    "migrate:test": "dotenv -e ../../.env -- sh -c 'DATABASE_URL=$TEST_DATABASE_URL DIRECT_URL=$TEST_DATABASE_URL prisma migrate deploy'"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.16.2"
+  },
+  "devDependencies": {
+    "@car-dealer/eslint-config": "workspace:*",
+    "@car-dealer/typescript-config": "workspace:*",
+    "@types/node": "^22.18.1",
+    "dotenv-cli": "^10.0.0",
+    "eslint": "^9.36.0",
+    "prisma": "^6.16.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.5",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

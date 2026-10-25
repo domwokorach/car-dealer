@@ -1,0 +1,10 @@
+.expo/
+dist/
+web-build/
+*.tsbuildinfo
+# Expo prebuild output is generated (Continuous Native Generation); never edit or commit by hand.
+/ios
+/android
+.env
+.env.*
+!.env.example

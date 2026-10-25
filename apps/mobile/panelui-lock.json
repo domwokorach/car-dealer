@@ -1,0 +1,1238 @@
+{
+  "version": 2,
+  "files": {
+    "components/panel/accordion.tsx": {
+      "item": "accordion",
+      "digest": "sha256:a3b61d3d5f79266bce6b9d99ad6b2851d87420dd5d861aeacb121ccd84b078e4"
+    },
+    "components/panel/icons.tsx": {
+      "item": "icons",
+      "digest": "sha256:c564be79d5eae89519d5d439d782f488795b4beda2bcecb0d79dd66fc3d34f49"
+    },
+    "hooks/use-direction.ts": {
+      "item": "use-direction",
+      "digest": "sha256:9202d8550abaed8720af42d0320acf51e227fbf23f649b5636fd26475b849867"
+    },
+    "components/panel/text.tsx": {
+      "item": "text",
+      "digest": "sha256:324bcd1e21ff2471deb04798bd1af7def316f72c0cb8909cf1160e4be7850530"
+    },
+    "components/panel/alert.tsx": {
+      "item": "alert",
+      "digest": "sha256:d7d5245ce3f97f3e786073b8fe667fc7cec07c3e80cc0899982e027a1131e7fe"
+    },
+    "lib/cn.ts": {
+      "item": "cn",
+      "digest": "sha256:9304a861c8673bee09e0f12de31773abbde503b02e59dfd74763ddec2e37cf05"
+    },
+    "components/panel/attachment.tsx": {
+      "item": "attachment",
+      "digest": "sha256:fcf34bacceae185363894abc3a923326bca1fb589c6a26fa263bc834ca949e9a"
+    },
+    "components/panel/animated-pressable.tsx": {
+      "item": "animated-pressable",
+      "digest": "sha256:a979faecb23f415ac3c172daafc652449440d489f3461b61294207ce1c8a9d00"
+    },
+    "components/panel/item.tsx": {
+      "item": "item",
+      "digest": "sha256:c78270450a8fc4b6b5b195e331b8afefc33074fd706220cd78ead6a241da70f7"
+    },
+    "components/panel/shimmer.tsx": {
+      "item": "shimmer",
+      "digest": "sha256:aae089d1fb263f3e78b9b3537189cf2b5c996392eb1c8a6a6d766a646154b48e"
+    },
+    "components/panel/avatar-group.ts": {
+      "item": "avatar",
+      "digest": "sha256:9cab4776348235db66b883cc0696ed93b2230e1bd21ed74bdf8ef39d1f5059ed"
+    },
+    "components/panel/avatar-source.ts": {
+      "item": "avatar",
+      "digest": "sha256:c40e0901a74d1f31baa29e6d9b180016d43fe95eeb92c542eaf1f4e7d73b1dcd"
+    },
+    "components/panel/avatar.tsx": {
+      "item": "avatar",
+      "digest": "sha256:1a74c5166840881beca8d25cc132f5409c863791101dc0483659a644e13b55eb"
+    },
+    "components/panel/avatar-cropper-math.ts": {
+      "item": "avatar-cropper",
+      "digest": "sha256:e409adce25495f7e923b38cda15f591d3592e89bd8bc6d0ce552406b8530d9a0"
+    },
+    "components/panel/avatar-cropper.tsx": {
+      "item": "avatar-cropper",
+      "digest": "sha256:e8b22264758910c3d63a632cd9b52bbd8e4d1ae21311470e2336ac665d83df56"
+    },
+    "components/panel/button.tsx": {
+      "item": "button",
+      "digest": "sha256:f6ab1e9bbec2e3cc79ef9e1ae349abf9b873aba548c3a108085c5d197a09e384"
+    },
+    "lib/native.ts": {
+      "item": "native",
+      "digest": "sha256:d2c74e54b8376bae665119a516b67a5f9570a58b6a1ea1b5e71af06993be34d0"
+    },
+    "lib/native-host.tsx": {
+      "item": "native",
+      "digest": "sha256:c03292c099c4cf992798e6cde2b0628731f8e6f30f88a992b8f2b3c8e47a210e"
+    },
+    "hooks/use-theme.ts": {
+      "item": "use-theme",
+      "digest": "sha256:1e0fe0e82d80fbb51c93bf6735d2676cf5f125a7f8f1210756e0aec5e8ec743f"
+    },
+    "components/panel/spinner.tsx": {
+      "item": "spinner",
+      "digest": "sha256:0cabd59ba126afb9f4721001e55e8fa87ab5f1f93e0062b83a1ae490b3c0aa4f"
+    },
+    "components/panel/badge.tsx": {
+      "item": "badge",
+      "digest": "sha256:ca88cd3b2638616d7818a6cc168ec87f34b368a6ea45ef0291936de637247d8f"
+    },
+    "components/panel/bottom-sheet.tsx": {
+      "item": "bottom-sheet",
+      "digest": "sha256:90800f70c249cc0a633c3e3e2e5ff28f31665b5ed62082ef92fc13dadbcc3720"
+    },
+    "lib/haptics.ts": {
+      "item": "haptics",
+      "digest": "sha256:aad3c62bb6b9039ef5db86da4f161e415f3f459e25b192a192ae325997733e41"
+    },
+    "components/panel/portal.tsx": {
+      "item": "portal",
+      "digest": "sha256:39c24f3e436f7f356eb4ff210f2c69a274b8843d211d44ce0f274967c0ad8e7a"
+    },
+    "components/panel/focus-restoration-store.ts": {
+      "item": "focus-restoration-store",
+      "digest": "sha256:cd47b2ec6b440f1073e831912037677aaca12330f33a8aea335d67a46980a7a9"
+    },
+    "components/panel/modal-isolation-store.ts": {
+      "item": "modal-isolation-store",
+      "digest": "sha256:346301f0da15175f23a8918834d0c6e9bbdb096e3c130fa92bc9640dc3500c70"
+    },
+    "components/panel/portal-store.ts": {
+      "item": "portal-store",
+      "digest": "sha256:2b5d2ec9b313dc6cea151888b2a97d3de288bfd10863950ea3f93f218af8eeb8"
+    },
+    "components/panel/scrim.tsx": {
+      "item": "scrim",
+      "digest": "sha256:b8a5f68918ced359b54fa8897f752c6f18ad6a9f2e8e445c572d19f518986fb2"
+    },
+    "hooks/use-back-handler.ts": {
+      "item": "use-back-handler",
+      "digest": "sha256:7c45197c64beb13d8ab1f386758e07e2d83bdb6d02e5d83e27153afbdfa686e1"
+    },
+    "components/panel/breadcrumb.tsx": {
+      "item": "breadcrumb",
+      "digest": "sha256:4c1db52f11f427e3c7c406ff11a22c1a7a3bfdbd0a04c03cf914ea053c808187"
+    },
+    "components/panel/calendar.tsx": {
+      "item": "calendar",
+      "digest": "sha256:7f5c787e7a1e3e30c34bedbb5433d001e291690f17ce810e9d9aee96ad682bad"
+    },
+    "lib/date.ts": {
+      "item": "date",
+      "digest": "sha256:f61a21bf7c712781f4e7e5fc9239b1e3cff04399c9fef7ea083b0e5d5a8b14f5"
+    },
+    "components/panel/popover.tsx": {
+      "item": "popover",
+      "digest": "sha256:f8a8f083cfdf1eafabb5185d81cc670783dbf5935f5612a219688829248f6b35"
+    },
+    "components/panel/camera-model.ts": {
+      "item": "camera",
+      "digest": "sha256:0850a338d43779d6791b8e8005fb3dd384879cc88fbe5156226d5fe1a8a26743"
+    },
+    "components/panel/camera.tsx": {
+      "item": "camera",
+      "digest": "sha256:253fa2454458e7da1134a3ebb1a81e305b680b40ddf69b54cd854a084f816c1c"
+    },
+    "components/panel/controllable-state.ts": {
+      "item": "controllable-state",
+      "digest": "sha256:07587394974bbd8eebdc9af5b890ab1fa6f07494c06e0c5b71a88854a7bbf787"
+    },
+    "components/panel/card.tsx": {
+      "item": "card",
+      "digest": "sha256:69a9d280e50711a55b56dca82b76ee1a95e4a9fd461c36869199fc93c70ce3b8"
+    },
+    "components/panel/carousel-lifecycle.ts": {
+      "item": "carousel",
+      "digest": "sha256:ba2fe378ad5e0a8d3e96ff8e9501935ac8fcf1f853e63bb0329a634c72baaba3"
+    },
+    "components/panel/carousel.tsx": {
+      "item": "carousel",
+      "digest": "sha256:b16f6347e632d075edcb930cb5bfd35ad3bf5d09d360521d677576354518fcb1"
+    },
+    "components/panel/checkbox.tsx": {
+      "item": "checkbox",
+      "digest": "sha256:8385204e9c9fb01318b14910b2629fc6563f89d680a3ecb0dc303f807cf3ef93"
+    },
+    "components/panel/color-picker-accessibility.ts": {
+      "item": "color-picker",
+      "digest": "sha256:921b69a1366b8c50d4da287e9bebe180451bd972d9fa021784e6c7ca27cbc333"
+    },
+    "components/panel/color-picker.tsx": {
+      "item": "color-picker",
+      "digest": "sha256:ff46709eb50e92a67652fbd158d05d3654ff3e24b2c4e9a6b91b4367b4e83ad2"
+    },
+    "lib/color.ts": {
+      "item": "color",
+      "digest": "sha256:209e5262339438a4777b09719d82f25b540c82a7f18497e9d6466952a6fcc309"
+    },
+    "components/panel/compare.tsx": {
+      "item": "compare",
+      "digest": "sha256:f9beaff7950c3ce2115835025b7e77800d30165f61b567a80a69325e4770f868"
+    },
+    "components/panel/countdown-time.ts": {
+      "item": "countdown",
+      "digest": "sha256:5c8dd57cdc374c1b200d9d42b19ff2dd3cc392ac5a64af45f563c3c190cfb684"
+    },
+    "components/panel/countdown.tsx": {
+      "item": "countdown",
+      "digest": "sha256:747ef5e105e9a5ec7c61fdb63f9627531f92e3b21d2f95581a37e6a925780638"
+    },
+    "components/panel/date-picker.tsx": {
+      "item": "date-picker",
+      "digest": "sha256:9d2a1eb3a447043daf2521f15f71e0eb252a7d73ffbdac70c09b493b92d8f6f6"
+    },
+    "components/panel/date-time-picker.tsx": {
+      "item": "date-time-picker",
+      "digest": "sha256:e7f1e9ad320da13527761684e7750e8ef891fa2715aaa2e9be9a92f0913c90aa"
+    },
+    "components/panel/dialog.tsx": {
+      "item": "dialog",
+      "digest": "sha256:b01a30874cfe3e91965b3be3a877d6f71d1aa12b9863d81fa609beba31fedaf6"
+    },
+    "lib/time.ts": {
+      "item": "time",
+      "digest": "sha256:5852ab78d7c53e3184b65efad0f4bc690ca3addf163a45fe4b0471d4ca7763e2"
+    },
+    "components/panel/accessibility.ts": {
+      "item": "time-picker",
+      "digest": "sha256:c72e1453d70b6aa31791b5937b10b4ef36f60871b3fc8486b0945f7dbfab7b72"
+    },
+    "components/panel/time-picker.tsx": {
+      "item": "time-picker",
+      "digest": "sha256:dfd4cb30984437f9a5118b29c27f72ce6f985bd85c417b32d3b48612b616dd7d"
+    },
+    "components/panel/ruler-window.ts": {
+      "item": "time-picker",
+      "digest": "sha256:12a559e51d54818c98404fa60b642ef98f617f0fb670dfb2047f8cb8c7284091"
+    },
+    "components/panel/direction.tsx": {
+      "item": "direction",
+      "digest": "sha256:ddaf6370523f5cb73e692cdc07a26e9907e0e453376aaee50094e15332c012eb"
+    },
+    "components/panel/drawer.tsx": {
+      "item": "drawer",
+      "digest": "sha256:192f8bc04c98acd7bc631a363e97106260753ff4a6de9f9b4a506cf0eb516230"
+    },
+    "components/panel/empty-state.tsx": {
+      "item": "empty-state",
+      "digest": "sha256:4d60c37634889980d20ba7042235465a105d27083d9f167381ba8d29cab72d7b"
+    },
+    "components/panel/feedback.tsx": {
+      "item": "feedback",
+      "digest": "sha256:158bdfb59156ff20337a660b4aa9e71cb3d6ae453612be4d0ea6bc54ee806fa2"
+    },
+    "components/panel/keyboard-avoider.tsx": {
+      "item": "keyboard-avoider",
+      "digest": "sha256:0f0146689c92559562a96c1a31bb58429022c0b5fd8d60975744ad50f5a0b35a"
+    },
+    "hooks/use-keyboard-avoidance.ts": {
+      "item": "use-keyboard-avoidance",
+      "digest": "sha256:4b7346aad45e028a73ac3859cfff4e30c5f53b629636aca4af072f56c05565fc"
+    },
+    "components/panel/field.tsx": {
+      "item": "field",
+      "digest": "sha256:1e2a24767db8e436883e38bef4114eedcdbb639b79a92ddce0aaecfe4c72d93c"
+    },
+    "components/panel/label.tsx": {
+      "item": "label",
+      "digest": "sha256:e5b6f9e4e94a12319c4d476e88e1e8f73e53563a40df886ea2483f65d13ee868"
+    },
+    "components/panel/separator.tsx": {
+      "item": "separator",
+      "digest": "sha256:49d74b90a57b9b98e2a07f60bef7baa703de7a2c0ab73c756a0a123fdc9671ab"
+    },
+    "components/panel/file-upload-core.ts": {
+      "item": "file-upload",
+      "digest": "sha256:24db3f39ac4a44481f644a547dff1bb0d06e679e8e61bd6172d35dfa625838b3"
+    },
+    "components/panel/file-upload.tsx": {
+      "item": "file-upload",
+      "digest": "sha256:d080e83f18b860b9ff3ecc66611be71a5ef89939333773c6198142a76129e2cd"
+    },
+    "components/panel/image-viewer-geometry.ts": {
+      "item": "image-viewer",
+      "digest": "sha256:cc9f49edaa90e4370c29a1b5f4062863004993b58a7729a314634ba4e21fc88f"
+    },
+    "components/panel/image-viewer.tsx": {
+      "item": "image-viewer",
+      "digest": "sha256:f9c1b8f55103dfde73d2dcc2eb85399ae652bcde23f6aa2e06636b644aac4548"
+    },
+    "components/panel/menu.tsx": {
+      "item": "menu",
+      "digest": "sha256:417ee88ca41690df86ea1c381df5c5e062b6f6ddfc3283b4dab32f720d60fa22"
+    },
+    "components/panel/flip-card.tsx": {
+      "item": "flip-card",
+      "digest": "sha256:15653aaa2722c0c230a14279d5887200f06cae03c0096734ece1cdb5aed007e1"
+    },
+    "components/panel/input.tsx": {
+      "item": "input",
+      "digest": "sha256:6355655a963d68be82609c18ba5bcf1f41663eebb24903132f8b7b172faf2af2"
+    },
+    "components/panel/input-content-padding.ts": {
+      "item": "input",
+      "digest": "sha256:3b948993b1bd50d9dfe012ce17aaa3a062fee261ce04b183a27a7bbdf5d985cf"
+    },
+    "components/panel/loader.tsx": {
+      "item": "loader",
+      "digest": "sha256:5e21ca07ee72a0883362664bd7e245e29f467ead407416d4dd11e751d9e98c63"
+    },
+    "components/panel/basemap.ts": {
+      "item": "map",
+      "digest": "sha256:2e08b9f3c8558b87991ac45f9ace0c74e17755bec20025b7a8f7b1bc5d01b9c1"
+    },
+    "components/panel/map.tsx": {
+      "item": "map",
+      "digest": "sha256:61f859aff83598a61b63ff6201bfacfdd5fb38f852ba2370dcc1c1f91f746f26"
+    },
+    "components/panel/map-accessibility.ts": {
+      "item": "map",
+      "digest": "sha256:a146a591523a46689db25e8a8c92082ae07c941fbc45df560f0361c7c7d88bf5"
+    },
+    "components/panel/map-children.ts": {
+      "item": "map",
+      "digest": "sha256:916688b3305c1d26522684a1c9f55922b9fd3378238ffdf1a350c89cb393df8b"
+    },
+    "components/panel/map-insets.ts": {
+      "item": "map",
+      "digest": "sha256:a39de95aa8ba098cc4ea8a5138795d2f09d7c3a75adaea6bad777be7bb8f5c57"
+    },
+    "components/panel/maplibre.ts": {
+      "item": "map",
+      "digest": "sha256:f3eddf5b070fb9ca204fa43008a0a52dcd037353777e0bad386f5f696768dfa3"
+    },
+    "components/panel/native-style.ts": {
+      "item": "map",
+      "digest": "sha256:0d37cdfc23c4dddf382b111670ea7e4cb180bad7ee8d445fe79c68a62b581702"
+    },
+    "components/panel/marker.tsx": {
+      "item": "marker",
+      "digest": "sha256:18ec3ad38c89269ac00b2636e8ac22b67d53ed765b1758ef6af6ff0c42711acf"
+    },
+    "components/panel/message.tsx": {
+      "item": "message",
+      "digest": "sha256:899325c3dcf22b4be453886ded514797303a95b56d347888934b29f4b2770c40"
+    },
+    "components/panel/message-scroller.tsx": {
+      "item": "message-scroller",
+      "digest": "sha256:f82dff17fa858d33ca271973f49be8cb30f70cc6607cf1e3ad7a9122536eea49"
+    },
+    "components/panel/message-scroller-math.ts": {
+      "item": "message-scroller",
+      "digest": "sha256:d45cafb28969bb6288dfb6ffd2e4470d282723cdfd548379ad285184c2cb40cf"
+    },
+    "components/panel/meter.tsx": {
+      "item": "meter",
+      "digest": "sha256:7757607d9f4cecd1d4541c5925d37a728d7f1bf1398d9c74746f4210f965851c"
+    },
+    "components/panel/meter-scale.ts": {
+      "item": "meter",
+      "digest": "sha256:e6bdbbf73953f0f0fe53990bdeb7996464f028c7c0bc81fd007e2f43f8848da2"
+    },
+    "components/panel/otp-input.tsx": {
+      "item": "otp-input",
+      "digest": "sha256:3fe63f347699166da940a7047953abab3014f4fd7d548fdbd08399d47ef2ca65"
+    },
+    "components/panel/otp-input-state.ts": {
+      "item": "otp-input",
+      "digest": "sha256:39dde8f165926f051dcd638f3ee2dac325c57df58be6466510de6967291d3f11"
+    },
+    "components/panel/page-header.tsx": {
+      "item": "page-header",
+      "digest": "sha256:05373eb8a29a3b31bb97ab994d13103c4498327d6d407e6c72cb74fa65365f22"
+    },
+    "components/panel/planner.tsx": {
+      "item": "planner",
+      "digest": "sha256:9f3ede6521b69cf4328f3c73a39358620200df586afd5dfdeef610572699ddc1"
+    },
+    "components/panel/planner-announcement.ts": {
+      "item": "planner",
+      "digest": "sha256:cd0cafa8e378bbbd060ef7f420f60bda905220bb3b02f84a7f16401318ee5bb0"
+    },
+    "components/panel/planner-entries.ts": {
+      "item": "planner",
+      "digest": "sha256:97f8fbc0ac7c449aa4eaf89c4ca6d6f94f0e8978dcc130b74232ac88f16b04ab"
+    },
+    "components/panel/planner-grid-navigation.ts": {
+      "item": "planner",
+      "digest": "sha256:4d69e89adde3d05e87d6c698fee856ab03b069d2ac7e2c7ce892f1e493f5154f"
+    },
+    "components/panel/planner-lifecycle.ts": {
+      "item": "planner",
+      "digest": "sha256:7732a2c2c64c7037272b304b75165c26d96fc0b32becccb11b0e96b13ace39dc"
+    },
+    "components/panel/planner-today.ts": {
+      "item": "planner",
+      "digest": "sha256:bce42306c7d729e67ed4394825126046d1134784c373dc68ceccc257bd398e96"
+    },
+    "components/panel/planner-weeks.ts": {
+      "item": "planner",
+      "digest": "sha256:fcb9233995e0336c56fe267c28077932bde0c58ecfa7961bba55317a69cea28d"
+    },
+    "components/panel/frame.tsx": {
+      "item": "frame",
+      "digest": "sha256:f26d4ae3e4c4c548731ec1b5318f332e066892d1b397f3c6081dfeb75e16d7eb"
+    },
+    "components/panel/rating.tsx": {
+      "item": "rating",
+      "digest": "sha256:34a006cadf6a0d386638523a49f80d9ef7873bbd5aec9eb5147bf3ab329b02dd"
+    },
+    "components/panel/rating-inputs.ts": {
+      "item": "rating",
+      "digest": "sha256:80dbddfa2a1e6574f55cb08901e2385d5e948086817750a6355fefa53d09b98e"
+    },
+    "components/panel/scroll-text.tsx": {
+      "item": "scroll-text",
+      "digest": "sha256:90598f4a72b9243cb4a0d618eee9544135af06396cc5871b0f9201db9e10282a"
+    },
+    "hooks/use-reveal-progress.ts": {
+      "item": "use-reveal-progress",
+      "digest": "sha256:1c9874ee0880bd619d1ff693191d06e59f6ce4814da6aa4363f750b7197a7c28"
+    },
+    "components/panel/scroll-progress.tsx": {
+      "item": "scroll-progress",
+      "digest": "sha256:a6e42613c4da03e593cb0072f91f118c0690627d8f9543788a11a24d5602bf5a"
+    },
+    "components/panel/search-bar.tsx": {
+      "item": "search-bar",
+      "digest": "sha256:d37e64c85ad883b8c47a7df57f5dfa072ef0cf37cd9d374b750841dbf0b67edf"
+    },
+    "components/panel/search-bar-debounce.ts": {
+      "item": "search-bar",
+      "digest": "sha256:14601f75b7da630eacd7003a8c4c91b05044ad4cb98a638cc291e812e696721e"
+    },
+    "hooks/use-keyboard.ts": {
+      "item": "use-keyboard",
+      "digest": "sha256:7436b26e1ac93892305ff45a523e18b13a44876a194e3d31cde86e6559d92875"
+    },
+    "components/panel/section-progress.tsx": {
+      "item": "section-progress",
+      "digest": "sha256:3593e8e6fa5555840b1b646f3c44ab892a73ac7ef5a8adf495fe7f9690fd5544"
+    },
+    "components/panel/select.tsx": {
+      "item": "select",
+      "digest": "sha256:413eeb881332ab27b540c129de90872040620adaf98069cca45ad2bee5cdc067"
+    },
+    "components/panel/native-select-contract.ts": {
+      "item": "select",
+      "digest": "sha256:c04f9fb7c2a3595fe5e5eb2471cd09c9e2d3ffa86eb70dbf4326ea9185f8e9c9"
+    },
+    "components/panel/input-group.tsx": {
+      "item": "input-group",
+      "digest": "sha256:b158569a1ed14293123e6e5ca07a7b9fd6469c2a5bf9666253935895fbfdf1ea"
+    },
+    "components/panel/input-group-measurements.ts": {
+      "item": "input-group",
+      "digest": "sha256:4cb3a9b85ad33fe1f42e6b1a3236fd1bc1a78aac321c78cb15ad2daf03a58389"
+    },
+    "components/panel/signature.tsx": {
+      "item": "signature",
+      "digest": "sha256:6c5e293ce480076b6e0615a3bc6232cdeb90b57edfead21cad9c7f9663866e3c"
+    },
+    "components/panel/signature-accessibility.ts": {
+      "item": "signature",
+      "digest": "sha256:2e9cff3cadab7b3a809acddbf366e6ba74bb78b6afb21b76801c60186467d3e9"
+    },
+    "components/panel/skeleton.tsx": {
+      "item": "skeleton",
+      "digest": "sha256:a96f39a132975b1bf1867b57326b03fd1311ea2822dfcdb678537d40cfba23d0"
+    },
+    "components/panel/steps.tsx": {
+      "item": "steps",
+      "digest": "sha256:f11cff9245633982870f9e8b3f0f0aed1b0ccfe4c21c02099fc9a8dccf1f43b2"
+    },
+    "components/panel/steps-trigger.ts": {
+      "item": "steps",
+      "digest": "sha256:6c470175c8e2e380fa9846a35b0784715940f183217082dc9884c659746d59fd"
+    },
+    "components/panel/support.tsx": {
+      "item": "support",
+      "digest": "sha256:4cb91180304a5b5cc393f8ae205375a08b6613fa8296769f5abed14eee9d3b0e"
+    },
+    "components/panel/swipe.tsx": {
+      "item": "swipe",
+      "digest": "sha256:177052472257e56776f6b3c887e8f395bb7029e1f65f76e130b4fce3258190d4"
+    },
+    "components/panel/switch.tsx": {
+      "item": "switch",
+      "digest": "sha256:529e6547433bc30a89ed3e0a22ddd82c1bffe664b63d1674488f011f2d893afa"
+    },
+    "components/panel/tabs.tsx": {
+      "item": "tabs",
+      "digest": "sha256:63cbfc826faeab65046afaa6a09f2b1b29f79c40280b5c2293f71a28f7eb36d7"
+    },
+    "components/panel/theme-selector.tsx": {
+      "item": "theme-selector",
+      "digest": "sha256:aa594654236159647c431d1f288a328779ad97d86c0ea2fb2010116ac25cc6da"
+    },
+    "components/panel/theme-preview.tsx": {
+      "item": "theme-selector",
+      "digest": "sha256:2af6e88d799d18055cffa81102855547e012e76d6b96bc685f563d4bd78c1d92"
+    },
+    "components/panel/timeline.tsx": {
+      "item": "timeline",
+      "digest": "sha256:9ba17fd0766a32ee5a09a8423fba9d829cba0f52aa603a6fa7c8572c6bbd0d6c"
+    },
+    "components/panel/timeline-geometry.ts": {
+      "item": "timeline",
+      "digest": "sha256:f19edc36a4a6d173886c72c92b64215303353d9664ce85db7a94a7d0fb2667c1"
+    },
+    "components/panel/toggle-button.tsx": {
+      "item": "toggle-button",
+      "digest": "sha256:fdf6ef9a6a65e4996ccce4b585e59127d68efe16cfd181ac374228eefbae1190"
+    },
+    "components/panel/typography.tsx": {
+      "item": "typography",
+      "digest": "sha256:773327822cf4fb799c79aec7457486bf7a0b5e125411dfc22bab98a7c13f6ef0"
+    },
+    "components/panel/blocks/boarding-pass.tsx": {
+      "item": "boarding-pass",
+      "digest": "sha256:7a40aef5dc450b7c8dd0dc51a3a25f6b0147454e9ff412dad16a83c0fdacebbf"
+    },
+    "components/panel/animated-badge.tsx": {
+      "item": "animated-badge",
+      "digest": "sha256:04d492abf45075e459cdcea47befcf3aa6a8923db5796ea67ef8b12912822303"
+    },
+    "components/panel/qr-code.tsx": {
+      "item": "qr-code",
+      "digest": "sha256:8c2ef164a20d0fc7622f11647dbf84e783633dc58d10f0d856c0ea531ddb26c6"
+    },
+    "components/panel/qr-encode.ts": {
+      "item": "qr-code",
+      "digest": "sha256:babd4cf7f1f151c4e5cfcb71881124ace941f07a7c59d98eaf2ac4ac4e05abd6"
+    },
+    "components/panel/qr-shapes.ts": {
+      "item": "qr-code",
+      "digest": "sha256:43005545cbb4ae76420fb5c7f230d94801b63a88d57156cdcd58bef4bec4d995"
+    },
+    "components/panel/slide-button.tsx": {
+      "item": "slide-button",
+      "digest": "sha256:1349836f4b9cb07ad37f4fef0be26889629b7d2a43cdae27dd0520460e0b841b"
+    },
+    "components/panel/slide-button-track.ts": {
+      "item": "slide-button",
+      "digest": "sha256:211ed086af37f1416e995f0ecbb8ea481db1bed98c9531afbd789547439e217f"
+    },
+    "components/panel/blocks/wallet.tsx": {
+      "item": "wallet",
+      "digest": "sha256:b83d0b3143a0e707a3e3a3c4ed2186b4de97ed36df4c83c0ae9cc92e5f619ec0"
+    },
+    "components/panel/area-chart.tsx": {
+      "item": "area-chart",
+      "digest": "sha256:3554b3fa5149cda32e482941e4ea23ec142138773dff963989ea362a149f7660"
+    },
+    "lib/chart.ts": {
+      "item": "chart",
+      "digest": "sha256:12160f7c56a4f37f117a8edfbf84c899b9043f57be97b43c13d62b5b25b80e6a"
+    },
+    "components/panel/chart-accessibility.ts": {
+      "item": "chart-accessibility",
+      "digest": "sha256:057e905c2d0c81ab3469da142152f64f9775fa2c5d3257572ea369fcb18f3970"
+    },
+    "components/panel/text-animation.tsx": {
+      "item": "text-animation",
+      "digest": "sha256:e0861d8cdbad05b2ebab4977f4abca34292038fe4e40062fed47c4194c22e141"
+    },
+    "components/panel/blocks/activity.tsx": {
+      "item": "activity",
+      "digest": "sha256:0a9da841aa67f19d538a787c7ed93fc88d0ef856ebc0c0c5dd73a297141933aa"
+    },
+    "components/panel/bar-chart.tsx": {
+      "item": "bar-chart",
+      "digest": "sha256:688e4ff22e1ff2a060118d2aed4dfb404f3e5cc80dabdf2d968b1d049e8e777d"
+    },
+    "components/panel/heatmap-chart.tsx": {
+      "item": "heatmap-chart",
+      "digest": "sha256:fe48cabbcc650b80c200a90535e89566d7bed167b7da43543116c59d6bd50231"
+    },
+    "components/panel/kpi.tsx": {
+      "item": "kpi",
+      "digest": "sha256:ba111172df2da9f9500cc8ae20591b8f7b01fe0d48e9eea8b210c48adc917337"
+    },
+    "components/panel/line-chart.tsx": {
+      "item": "line-chart",
+      "digest": "sha256:4e6435ab6e684914677580319ee84431aa95ff249dba2f7c14c1d6a051c8e01f"
+    },
+    "components/panel/progress.tsx": {
+      "item": "progress",
+      "digest": "sha256:acd59482e41e3d001e2a8bceb5b0c5ba6fa5cf5fd5166d1890ad7bd4449f6917"
+    },
+    "components/panel/surface.tsx": {
+      "item": "surface",
+      "digest": "sha256:8cd5cb8307862ba0222f6544a6f730a7f09457fae186b9697ada4bca874b0f0a"
+    },
+    "components/panel/ring-chart.tsx": {
+      "item": "ring-chart",
+      "digest": "sha256:7edc2eb95f84693d21da22b527b49b086c6073b7539fe46b9c13f945f8015bb5"
+    },
+    "components/panel/panel-ui-provider.tsx": {
+      "item": "panel-ui-provider",
+      "digest": "sha256:adef1b10b8d5e9514ea066617d3ca7b95a8459f33a600357b0426361e5ff1aec"
+    },
+    "components/panel/toast.tsx": {
+      "item": "toast",
+      "digest": "sha256:eac0620df16e32bc4a0fc6206170925ec2be26aec624481892d18136fd8d1774"
+    },
+    "components/panel/toast-store.ts": {
+      "item": "toast",
+      "digest": "sha256:3a74ab7c74e9aae50664bd5e7fd1204b267b45e20a1e89821911ceee4fc3d63f"
+    }
+  },
+  "roots": {
+    "accordion": [
+      "accordion",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "alert": [
+      "alert",
+      "cn",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "attachment": [
+      "attachment",
+      "animated-pressable",
+      "cn",
+      "item",
+      "text",
+      "use-direction",
+      "shimmer"
+    ],
+    "avatar": [
+      "avatar",
+      "cn",
+      "text",
+      "use-direction"
+    ],
+    "avatar-cropper": [
+      "avatar-cropper",
+      "button",
+      "animated-pressable",
+      "cn",
+      "icons",
+      "use-direction",
+      "native",
+      "use-theme",
+      "spinner",
+      "text"
+    ],
+    "badge": [
+      "badge",
+      "text",
+      "use-direction"
+    ],
+    "bottom-sheet": [
+      "bottom-sheet",
+      "cn",
+      "haptics",
+      "icons",
+      "use-direction",
+      "native",
+      "use-theme",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "text",
+      "use-back-handler"
+    ],
+    "breadcrumb": [
+      "breadcrumb",
+      "animated-pressable",
+      "cn",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "button": [
+      "button",
+      "animated-pressable",
+      "cn",
+      "icons",
+      "use-direction",
+      "native",
+      "use-theme",
+      "spinner",
+      "text"
+    ],
+    "calendar": [
+      "calendar",
+      "cn",
+      "date",
+      "icons",
+      "use-direction",
+      "popover",
+      "bottom-sheet",
+      "haptics",
+      "native",
+      "use-theme",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "text",
+      "use-back-handler"
+    ],
+    "camera": [
+      "camera",
+      "animated-pressable",
+      "cn",
+      "controllable-state",
+      "haptics",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "card": [
+      "card",
+      "cn",
+      "text",
+      "use-direction"
+    ],
+    "carousel": [
+      "carousel",
+      "cn",
+      "controllable-state",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "checkbox": [
+      "checkbox",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "color-picker": [
+      "color-picker",
+      "cn",
+      "color",
+      "haptics",
+      "popover",
+      "bottom-sheet",
+      "icons",
+      "use-direction",
+      "native",
+      "use-theme",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "text",
+      "use-back-handler"
+    ],
+    "compare": [
+      "compare",
+      "cn",
+      "haptics",
+      "text",
+      "use-direction"
+    ],
+    "countdown": [
+      "countdown",
+      "cn",
+      "text",
+      "use-direction"
+    ],
+    "date-picker": [
+      "date-picker",
+      "button",
+      "animated-pressable",
+      "cn",
+      "icons",
+      "use-direction",
+      "native",
+      "use-theme",
+      "spinner",
+      "text",
+      "calendar",
+      "date",
+      "popover",
+      "bottom-sheet",
+      "haptics",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "use-back-handler"
+    ],
+    "date-time-picker": [
+      "date-time-picker",
+      "button",
+      "animated-pressable",
+      "cn",
+      "icons",
+      "use-direction",
+      "native",
+      "use-theme",
+      "spinner",
+      "text",
+      "calendar",
+      "date",
+      "popover",
+      "bottom-sheet",
+      "haptics",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "use-back-handler",
+      "dialog",
+      "time",
+      "time-picker"
+    ],
+    "dialog": [
+      "dialog",
+      "cn",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "text",
+      "use-direction",
+      "use-back-handler"
+    ],
+    "direction": [
+      "direction",
+      "text",
+      "use-direction"
+    ],
+    "drawer": [
+      "drawer",
+      "cn",
+      "icons",
+      "use-direction",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "text",
+      "use-back-handler"
+    ],
+    "empty-state": [
+      "empty-state",
+      "text",
+      "use-direction"
+    ],
+    "feedback": [
+      "feedback",
+      "animated-pressable",
+      "cn",
+      "icons",
+      "use-direction",
+      "keyboard-avoider",
+      "text",
+      "use-keyboard-avoidance",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "use-back-handler"
+    ],
+    "field": [
+      "field",
+      "label",
+      "text",
+      "use-direction",
+      "separator",
+      "cn"
+    ],
+    "file-upload": [
+      "file-upload",
+      "animated-pressable",
+      "attachment",
+      "cn",
+      "item",
+      "text",
+      "use-direction",
+      "shimmer",
+      "controllable-state",
+      "field",
+      "label",
+      "separator",
+      "icons",
+      "image-viewer",
+      "haptics",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "use-back-handler",
+      "use-theme",
+      "menu",
+      "popover",
+      "bottom-sheet",
+      "native"
+    ],
+    "flip-card": [
+      "flip-card",
+      "cn"
+    ],
+    "input": [
+      "input",
+      "icons",
+      "use-direction",
+      "keyboard-avoider",
+      "text",
+      "use-keyboard-avoidance",
+      "label"
+    ],
+    "label": [
+      "label",
+      "text",
+      "use-direction"
+    ],
+    "loader": [
+      "loader",
+      "cn",
+      "icons",
+      "use-direction"
+    ],
+    "map": [
+      "map",
+      "cn",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "marker": [
+      "marker",
+      "animated-pressable",
+      "cn",
+      "icons",
+      "use-direction",
+      "separator",
+      "text",
+      "shimmer"
+    ],
+    "message": [
+      "message",
+      "animated-pressable",
+      "cn",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "message-scroller": [
+      "message-scroller",
+      "animated-pressable",
+      "cn",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "meter": [
+      "meter",
+      "text",
+      "use-direction"
+    ],
+    "otp-input": [
+      "otp-input",
+      "text",
+      "use-direction"
+    ],
+    "page-header": [
+      "page-header",
+      "animated-pressable",
+      "avatar",
+      "cn",
+      "text",
+      "use-direction",
+      "icons"
+    ],
+    "planner": [
+      "planner",
+      "cn",
+      "date",
+      "dialog",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "text",
+      "use-direction",
+      "use-back-handler",
+      "frame",
+      "icons"
+    ],
+    "rating": [
+      "rating",
+      "cn",
+      "haptics",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "scroll-text": [
+      "scroll-text",
+      "text",
+      "use-direction",
+      "use-reveal-progress",
+      "scroll-progress"
+    ],
+    "search-bar": [
+      "search-bar",
+      "animated-pressable",
+      "icons",
+      "use-direction",
+      "input",
+      "keyboard-avoider",
+      "text",
+      "use-keyboard-avoidance",
+      "label",
+      "spinner",
+      "use-keyboard"
+    ],
+    "section-progress": [
+      "section-progress",
+      "cn",
+      "haptics",
+      "scroll-progress",
+      "text",
+      "use-direction",
+      "use-back-handler"
+    ],
+    "select": [
+      "select",
+      "bottom-sheet",
+      "cn",
+      "haptics",
+      "icons",
+      "use-direction",
+      "native",
+      "use-theme",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "text",
+      "use-back-handler",
+      "input-group",
+      "input",
+      "keyboard-avoider",
+      "use-keyboard-avoidance",
+      "label"
+    ],
+    "signature": [
+      "signature",
+      "animated-pressable",
+      "cn",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "skeleton": [
+      "skeleton",
+      "cn"
+    ],
+    "spinner": [
+      "spinner"
+    ],
+    "steps": [
+      "steps",
+      "icons",
+      "use-direction",
+      "spinner",
+      "text"
+    ],
+    "support": [
+      "support",
+      "animated-pressable",
+      "cn",
+      "text",
+      "use-direction"
+    ],
+    "swipe": [
+      "swipe",
+      "animated-pressable",
+      "cn",
+      "haptics",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "switch": [
+      "switch",
+      "field",
+      "label",
+      "text",
+      "use-direction",
+      "separator",
+      "cn",
+      "haptics",
+      "native",
+      "use-theme"
+    ],
+    "tabs": [
+      "tabs",
+      "cn",
+      "text",
+      "use-direction"
+    ],
+    "theme-selector": [
+      "theme-selector",
+      "text",
+      "use-direction",
+      "use-theme"
+    ],
+    "timeline": [
+      "timeline",
+      "haptics",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "time-picker": [
+      "time-picker",
+      "button",
+      "animated-pressable",
+      "cn",
+      "icons",
+      "use-direction",
+      "native",
+      "use-theme",
+      "spinner",
+      "text",
+      "dialog",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "use-back-handler",
+      "haptics",
+      "popover",
+      "bottom-sheet",
+      "time"
+    ],
+    "toggle-button": [
+      "toggle-button",
+      "animated-pressable",
+      "cn",
+      "haptics",
+      "icons",
+      "use-direction",
+      "text"
+    ],
+    "typography": [
+      "typography",
+      "cn",
+      "text",
+      "use-direction"
+    ],
+    "boarding-pass": [
+      "boarding-pass",
+      "animated-badge",
+      "icons",
+      "use-direction",
+      "text",
+      "button",
+      "animated-pressable",
+      "cn",
+      "native",
+      "use-theme",
+      "spinner",
+      "countdown",
+      "flip-card",
+      "qr-code",
+      "popover",
+      "bottom-sheet",
+      "haptics",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "scrim",
+      "use-back-handler",
+      "slide-button",
+      "timeline"
+    ],
+    "wallet": [
+      "wallet",
+      "area-chart",
+      "chart",
+      "chart-accessibility",
+      "cn",
+      "text",
+      "use-direction",
+      "avatar",
+      "button",
+      "animated-pressable",
+      "icons",
+      "native",
+      "use-theme",
+      "spinner",
+      "frame",
+      "item",
+      "swipe",
+      "haptics",
+      "tabs",
+      "text-animation"
+    ],
+    "activity": [
+      "activity",
+      "bar-chart",
+      "chart",
+      "chart-accessibility",
+      "cn",
+      "text",
+      "use-direction",
+      "button",
+      "animated-pressable",
+      "icons",
+      "native",
+      "use-theme",
+      "spinner",
+      "frame",
+      "heatmap-chart",
+      "date",
+      "kpi",
+      "line-chart",
+      "progress",
+      "surface",
+      "ring-chart",
+      "tabs"
+    ],
+    "panel-ui-provider": [
+      "panel-ui-provider",
+      "cn",
+      "portal",
+      "focus-restoration-store",
+      "modal-isolation-store",
+      "portal-store",
+      "toast",
+      "button",
+      "animated-pressable",
+      "icons",
+      "use-direction",
+      "native",
+      "use-theme",
+      "spinner",
+      "text"
+    ]
+  },
+  "legacyFiles": [],
+  "registry": "https://panelui.dev/r"
+}

@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Car Dealer",
+    "slug": "car-dealer",
+    "scheme": "cardealer",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cardealer.mobile",
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "Lets the development build reach the Car Dealer API on your local network."
+      }
+    },
+    "android": {
+      "package": "com.cardealer.mobile",
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0B0D",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-secure-store",
+      "expo-image",
+      "expo-dev-client",
+      "@maplibre/maplibre-react-native",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Car Dealer uses the camera to photograph vehicles and your documents.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Car Dealer needs photo access so you can choose pictures to upload."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Car Dealer uses your location to show nearby dealerships and directions."
+        }
+      ]
+    ]
+  }
+}

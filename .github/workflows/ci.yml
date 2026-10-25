@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: car_dealer_dev
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      PGPASSWORD: postgres
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Create .env (CI values only; no secrets)
+        run: |
+          cp .env.example .env
+          {
+            echo 'DATABASE_URL=postgresql://postgres:postgres@localhost:5432/car_dealer_dev'
+            echo 'DIRECT_URL=postgresql://postgres:postgres@localhost:5432/car_dealer_dev'
+            echo 'TEST_DATABASE_URL=postgresql://postgres:postgres@localhost:5432/car_dealer_test'
+          } >> .env
+
+      - name: Prepare databases
+        run: |
+          psql -h localhost -U postgres -c 'CREATE DATABASE car_dealer_test'
+          pnpm db:generate
+          pnpm db:deploy
+          pnpm db:test:prepare
+          pnpm db:seed
+
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm check:cycles
+      - run: pnpm test
+      - run: pnpm build
+
+      - name: End-to-end tests
+        run: |
+          pnpm exec playwright install --with-deps chromium
+          pnpm test:e2e
+        env:
+          CI: 'true'
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: |
+            playwright-report
+            test-results
+          retention-days: 7

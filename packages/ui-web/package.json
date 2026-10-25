@@ -1,0 +1,45 @@
+{
+  "name": "@car-dealer/ui-web",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./theme.css": {
+      "style": "./src/styles/theme.css",
+      "default": "./src/styles/theme.css"
+    }
+  },
+  "files": ["dist", "src/styles"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@car-dealer/eslint-config": "workspace:*",
+    "@car-dealer/typescript-config": "workspace:*",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@testing-library/react": "^16.3.0",
+    "eslint": "^9.36.0",
+    "jsdom": "^26.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tsup": "^8.5.0",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "name": "car-dealer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A premium online showroom and dealership-management platform for one automotive brand with many physical branches. Customers browse real branch stock, enquire, book test drives and reserve vehicles online. Branch staff run their branch from a dashboard, and head office controls branches, staff, inventory and sales.",
+  "homepage": "https://github.com/domwokorach/car-dealer#readme",
+  "bugs": {
+    "url": "https://github.com/domwokorach/car-dealer/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/domwokorach/car-dealer.git"
+  },
+  "license": "ISC",
+  "author": "dominic wokorach",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "dev:showroom": "turbo run dev --filter=@car-dealer/showroom",
+    "dev:portal": "turbo run dev --filter=@car-dealer/dealer-portal",
+    "dev:api": "turbo run dev --filter=@car-dealer/api",
+    "dev:mobile": "turbo run build --filter=@car-dealer/mobile^... && pnpm --filter @car-dealer/mobile start",
+    "dev:mobile:go": "pnpm dev:mobile",
+    "dev:mobile:dev-client": "turbo run build --filter=@car-dealer/mobile^... && pnpm --filter @car-dealer/mobile start:dev-client",
+    "dev:mobile:ios": "turbo run build --filter=@car-dealer/mobile^... && pnpm --filter @car-dealer/mobile ios",
+    "dev:mobile:android": "turbo run build --filter=@car-dealer/mobile^... && pnpm --filter @car-dealer/mobile android",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:e2e": "dotenv -e .env -- playwright test --config tests/e2e/playwright.config.ts",
+    "check:cycles": "madge --circular --extensions ts,tsx --ts-config apps/api/tsconfig.json apps/api/src && madge --circular --extensions ts,tsx --ts-config apps/showroom/tsconfig.json apps/showroom/src && madge --circular --extensions ts,tsx --ts-config apps/dealer-portal/tsconfig.json apps/dealer-portal/src && madge --circular --extensions ts,tsx --ts-config tsconfig.json packages/contracts/src packages/api-client/src packages/ui-web/src packages/utils/src packages/database/src && madge --circular --extensions ts,tsx --ts-config apps/mobile/tsconfig.json apps/mobile/src apps/mobile/app",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md,css}\" --ignore-path .gitignore",
+    "db:generate": "pnpm --filter @car-dealer/database generate",
+    "db:migrate": "pnpm --filter @car-dealer/database migrate:dev",
+    "db:deploy": "pnpm --filter @car-dealer/database migrate:deploy",
+    "db:seed": "pnpm --filter @car-dealer/database seed",
+    "db:test:prepare": "pnpm --filter @car-dealer/database migrate:test",
+    "expo": "pnpm --filter @car-dealer/mobile exec expo",
+    "eas": "pnpm --filter @car-dealer/mobile exec eas"
+  },
+  "dependencies": {
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "^58.0.4",
+    "eslint-config-next": "^16.4.3",
+    "eslint-import-resolver-node": "^0.3.10",
+    "eslint-import-resolver-typescript": "^3.10.1",
+    "eslint-module-utils": "^2.14.0",
+    "eslint-plugin-expo": "^1.2.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-scope": "^8.4.0",
+    "eslint-visitor-keys": "^4.2.1",
+    "typescript-eslint": "^8.72.0"
+  },
+  "devDependencies": {
+    "@car-dealer/typescript-config": "workspace:*",
+    "@playwright/test": "^1.55.0",
+    "dotenv-cli": "^10.0.0",
+    "madge": "^8.0.0",
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.8",
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@9.15.4"
+}

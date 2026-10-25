@@ -1,0 +1,15 @@
+{
+  "extends": "@car-dealer/typescript-config/base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [],
+  "exclude": [
+    "node_modules"
+  ]
+}

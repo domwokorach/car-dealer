@@ -1,0 +1,422 @@
+// Single source of truth for the platform database. See docs/database.md.
+// Money is stored as integer pence. Columns are camelCase; tables are snake_case via @@map.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ───────────────────────────── Enums ─────────────────────────────
+
+enum Role {
+  CUSTOMER
+  SALES_EXECUTIVE
+  BRANCH_MANAGER
+  HEAD_OFFICE_ADMIN
+  SUPER_ADMIN
+}
+
+enum StaffRole {
+  SALES_EXECUTIVE
+  BRANCH_MANAGER
+}
+
+enum VehicleCondition {
+  NEW
+  USED
+}
+
+enum FuelType {
+  PETROL
+  DIESEL
+  HYBRID
+  PLUG_IN_HYBRID
+  ELECTRIC
+}
+
+enum Transmission {
+  MANUAL
+  AUTOMATIC
+}
+
+enum StockStatus {
+  AVAILABLE
+  RESERVED
+  SOLD
+  IN_TRANSIT
+  WITHDRAWN
+}
+
+enum ListingStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum ReservationStatus {
+  ACTIVE
+  EXPIRED
+  CANCELLED
+  CONVERTED
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+enum TransferStatus {
+  REQUESTED
+  COMPLETED
+  CANCELLED
+}
+
+enum EnquiryStatus {
+  NEW
+  IN_PROGRESS
+  CLOSED
+}
+
+enum TestDriveStatus {
+  REQUESTED
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+// ───────────────────────────── Identity & organisation ─────────────────────────────
+
+/// One row per Supabase Auth user. `id` equals the auth user id (JWT `sub`).
+/// `role` holds only the GLOBAL role (CUSTOMER, HEAD_OFFICE_ADMIN, SUPER_ADMIN);
+/// branch-scoped roles live in StaffMembership.
+model Profile {
+  id        String   @id @db.Uuid
+  email     String?  @unique
+  fullName  String?
+  phone     String?
+  role      Role     @default(CUSTOMER)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  memberships    StaffMembership[]
+  savedListings  SavedListing[]
+  enquiries      Enquiry[]
+  testDrives     TestDrive[]
+  reservations   Reservation[]
+  orders         Order[]
+  transfers      InventoryTransfer[] @relation("TransferRequestedBy")
+  auditEvents    AuditEvent[]
+
+  @@map("profiles")
+}
+
+model Branch {
+  id           String   @id @default(uuid()) @db.Uuid
+  code         String   @unique
+  name         String
+  addressLine1 String
+  city         String
+  postcode     String
+  phone        String?
+  email        String?
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  memberships   StaffMembership[]
+  stock         StockVehicle[]
+  enquiries     Enquiry[]
+  testDrives    TestDrive[]
+  reservations  Reservation[]
+  orders        Order[]
+  transfersFrom InventoryTransfer[] @relation("TransferFrom")
+  transfersTo   InventoryTransfer[] @relation("TransferTo")
+
+  @@map("branches")
+}
+
+model StaffMembership {
+  id        String    @id @default(uuid()) @db.Uuid
+  profileId String    @db.Uuid
+  branchId  String    @db.Uuid
+  role      StaffRole
+  isActive  Boolean   @default(true)
+  createdAt DateTime  @default(now())
+
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Restrict)
+  branch  Branch  @relation(fields: [branchId], references: [id], onDelete: Restrict)
+
+  @@unique([profileId, branchId])
+  @@index([branchId])
+  @@map("staff_memberships")
+}
+
+// ───────────────────────────── Catalogue ─────────────────────────────
+
+model VehicleModel {
+  id          String   @id @default(uuid()) @db.Uuid
+  slug        String   @unique
+  name        String
+  bodyType    String
+  description String?
+  createdAt   DateTime @default(now())
+
+  variants VehicleVariant[]
+
+  @@map("vehicle_models")
+}
+
+model VehicleVariant {
+  id             String       @id @default(uuid()) @db.Uuid
+  modelId        String       @db.Uuid
+  name           String
+  modelYear      Int
+  fuelType       FuelType
+  transmission   Transmission
+  engine         String?
+  listPricePence Int
+  createdAt      DateTime     @default(now())
+
+  model VehicleModel   @relation(fields: [modelId], references: [id], onDelete: Restrict)
+  stock StockVehicle[]
+
+  @@unique([modelId, name, modelYear])
+  @@index([modelId])
+  @@map("vehicle_variants")
+}
+
+// ───────────────────────────── Inventory ─────────────────────────────
+
+/// One physical vehicle. `branchId` is the CURRENT owning branch; history is kept in InventoryTransfer + AuditEvent.
+model StockVehicle {
+  id               String           @id @default(uuid()) @db.Uuid
+  /// Unique where present. Postgres allows many NULLs under a unique index.
+  vin              String?          @unique
+  branchId         String           @db.Uuid
+  variantId        String           @db.Uuid
+  condition        VehicleCondition
+  status           StockStatus      @default(AVAILABLE)
+  askingPricePence Int
+  mileage          Int?
+  registrationYear Int?
+  colour           String?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  branch       Branch              @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  variant      VehicleVariant      @relation(fields: [variantId], references: [id], onDelete: Restrict)
+  images       VehicleImage[]
+  listing      Listing?
+  reservations Reservation[]
+  orders       Order[]
+  testDrives   TestDrive[]
+  transfers    InventoryTransfer[]
+
+  @@index([branchId, status])
+  @@index([variantId])
+  @@index([status, condition])
+  @@map("stock_vehicles")
+}
+
+model VehicleImage {
+  id             String   @id @default(uuid()) @db.Uuid
+  stockVehicleId String   @db.Uuid
+  storagePath    String   @unique
+  altText        String?
+  position       Int      @default(0)
+  createdAt      DateTime @default(now())
+
+  stockVehicle StockVehicle @relation(fields: [stockVehicleId], references: [id], onDelete: Cascade)
+
+  @@index([stockVehicleId, position])
+  @@map("vehicle_images")
+}
+
+model Listing {
+  id             String        @id @default(uuid()) @db.Uuid
+  stockVehicleId String        @unique @db.Uuid
+  slug           String        @unique
+  title          String
+  description    String?
+  status         ListingStatus @default(DRAFT)
+  publishedAt    DateTime?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  stockVehicle StockVehicle   @relation(fields: [stockVehicleId], references: [id], onDelete: Restrict)
+  saved        SavedListing[]
+  enquiries    Enquiry[]
+
+  @@index([status, publishedAt])
+  @@map("listings")
+}
+
+model SavedListing {
+  profileId String   @db.Uuid
+  listingId String   @db.Uuid
+  createdAt DateTime @default(now())
+
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@id([profileId, listingId])
+  @@index([listingId])
+  @@map("saved_listings")
+}
+
+// ───────────────────────────── Customer journeys ─────────────────────────────
+
+model Enquiry {
+  id        String        @id @default(uuid()) @db.Uuid
+  branchId  String        @db.Uuid
+  listingId String?       @db.Uuid
+  profileId String?       @db.Uuid
+  name      String
+  email     String
+  phone     String?
+  message   String
+  status    EnquiryStatus @default(NEW)
+  createdAt DateTime      @default(now())
+
+  branch  Branch   @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  listing Listing? @relation(fields: [listingId], references: [id], onDelete: SetNull)
+  profile Profile? @relation(fields: [profileId], references: [id], onDelete: SetNull)
+
+  @@index([branchId, status, createdAt])
+  @@index([profileId])
+  @@map("enquiries")
+}
+
+model TestDrive {
+  id             String          @id @default(uuid()) @db.Uuid
+  branchId       String          @db.Uuid
+  stockVehicleId String          @db.Uuid
+  profileId      String          @db.Uuid
+  scheduledAt    DateTime
+  status         TestDriveStatus @default(REQUESTED)
+  notes          String?
+  createdAt      DateTime        @default(now())
+
+  branch       Branch       @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  stockVehicle StockVehicle @relation(fields: [stockVehicleId], references: [id], onDelete: Restrict)
+  profile      Profile      @relation(fields: [profileId], references: [id], onDelete: Restrict)
+
+  @@index([branchId, scheduledAt])
+  @@index([stockVehicleId, scheduledAt])
+  @@index([profileId])
+  @@map("test_drives")
+}
+
+// ───────────────────────────── Sales ─────────────────────────────
+
+/// A time-limited hold. At most ONE ACTIVE reservation per vehicle is enforced by a partial unique index
+/// (see migration `reservation_and_order_guards`); the service also serialises with SELECT ... FOR UPDATE.
+model Reservation {
+  id             String            @id @default(uuid()) @db.Uuid
+  stockVehicleId String            @db.Uuid
+  branchId       String            @db.Uuid
+  profileId      String            @db.Uuid
+  status         ReservationStatus @default(ACTIVE)
+  /// Price snapshot taken when the hold was created. Immutable by convention and by trigger.
+  pricePence     Int
+  idempotencyKey String            @unique
+  expiresAt      DateTime
+  createdAt      DateTime          @default(now())
+
+  stockVehicle StockVehicle @relation(fields: [stockVehicleId], references: [id], onDelete: Restrict)
+  branch       Branch       @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  profile      Profile      @relation(fields: [profileId], references: [id], onDelete: Restrict)
+  order        Order?
+
+  @@index([stockVehicleId, status])
+  @@index([profileId, createdAt])
+  @@index([branchId, status, expiresAt])
+  @@map("reservations")
+}
+
+model Order {
+  id               String      @id @default(uuid()) @db.Uuid
+  stockVehicleId   String      @db.Uuid
+  branchId         String      @db.Uuid
+  profileId        String      @db.Uuid
+  reservationId    String?     @unique @db.Uuid
+  status           OrderStatus @default(PENDING)
+  /// Agreed price snapshot, copied from the reservation. Never recomputed from current stock price.
+  agreedPricePence Int
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  stockVehicle StockVehicle @relation(fields: [stockVehicleId], references: [id], onDelete: Restrict)
+  branch       Branch       @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  profile      Profile      @relation(fields: [profileId], references: [id], onDelete: Restrict)
+  reservation  Reservation? @relation(fields: [reservationId], references: [id], onDelete: Restrict)
+
+  @@index([branchId, status])
+  @@index([profileId])
+  @@index([stockVehicleId])
+  @@map("orders")
+}
+
+model InventoryTransfer {
+  id            String         @id @default(uuid()) @db.Uuid
+  stockVehicleId String        @db.Uuid
+  fromBranchId  String         @db.Uuid
+  toBranchId    String         @db.Uuid
+  requestedById String         @db.Uuid
+  status        TransferStatus @default(REQUESTED)
+  reason        String?
+  createdAt     DateTime       @default(now())
+  completedAt   DateTime?
+
+  stockVehicle StockVehicle @relation(fields: [stockVehicleId], references: [id], onDelete: Restrict)
+  fromBranch   Branch       @relation("TransferFrom", fields: [fromBranchId], references: [id], onDelete: Restrict)
+  toBranch     Branch       @relation("TransferTo", fields: [toBranchId], references: [id], onDelete: Restrict)
+  requestedBy  Profile      @relation("TransferRequestedBy", fields: [requestedById], references: [id], onDelete: Restrict)
+
+  @@index([stockVehicleId, status])
+  @@index([fromBranchId, status])
+  @@index([toBranchId, status])
+  @@map("inventory_transfers")
+}
+
+// ───────────────────────────── Audit & events ─────────────────────────────
+
+/// Append-only (enforced by trigger). actorId is null for system actions.
+model AuditEvent {
+  id         String   @id @default(uuid()) @db.Uuid
+  actorId    String?  @db.Uuid
+  branchId   String?  @db.Uuid
+  entityType String
+  entityId   String
+  action     String
+  changes    Json?
+  createdAt  DateTime @default(now())
+
+  actor Profile? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([entityType, entityId])
+  @@index([branchId, createdAt])
+  @@index([actorId, createdAt])
+  @@map("audit_events")
+}
+
+/// Transactional outbox: written in the same transaction as the state change, delivered asynchronously.
+model OutboxEvent {
+  id          String    @id @default(uuid()) @db.Uuid
+  type        String
+  payload     Json
+  attempts    Int       @default(0)
+  createdAt   DateTime  @default(now())
+  processedAt DateTime?
+
+  @@index([processedAt, createdAt])
+  @@map("outbox_events")
+}

@@ -1,0 +1,5 @@
+{
+  "extends": "@car-dealer/typescript-config/nest.json",
+  "compilerOptions": { "rootDir": ".", "baseUrl": "." },
+  "include": ["src", "test"]
+}
