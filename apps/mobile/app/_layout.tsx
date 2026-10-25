@@ -29,6 +29,8 @@ function ThemedStack() {
         <Stack.Screen name="test-drive/[vehicleId]" options={{ title: 'Book a test drive', presentation: 'modal' }} />
         <Stack.Screen name="reservation/[vehicleId]" options={{ title: 'Reserve', presentation: 'modal' }} />
         <Stack.Screen name="sign-in" options={{ title: 'Sign in', presentation: 'modal' }} />
+        <Stack.Screen name="staff/photos/index" options={{ title: 'Vehicle photos' }} />
+        <Stack.Screen name="staff/photos/[vehicleId]" options={{ title: 'Vehicle photos' }} />
         <Stack.Screen name="dev/showcase" options={{ title: 'PanelUI showcase' }} />
         <Stack.Screen name="dev/block/[name]" options={{ headerShown: false }} />
       </Stack>

@@ -5,36 +5,25 @@ import { Carousel } from '@/components/panel/carousel';
 import { Screen } from '@/components/layout/screen';
 import { SectionHeader } from '@/components/layout/section-header';
 import { VehicleCard, VehicleCardSkeleton } from '@/components/vehicles/vehicle-card';
-import { Button, EmptyState, ErrorState, Text } from '@/components/ui';
+import { EmptyState, ErrorState } from '@/components/ui';
+import { CarHeroHeader } from '@/features/home/components/car-hero-header';
 import { useBranches, useLatestVehicles } from '@/features/catalogue/api/queries';
 import { openVehicle } from '@/features/catalogue/components/vehicle-list';
+import { useFeaturedVehicles } from '@/features/home/api/queries';
 import { useRefresh } from '@/hooks/use-refresh';
-import { colors, spacing } from '@/theme';
+import { spacing } from '@/theme';
 
 export default function HomeScreen() {
   const latest = useLatestVehicles(6);
   const branches = useBranches();
   const { width } = useWindowDimensions();
-  const { refreshing, onRefresh } = useRefresh([latest.refetch, branches.refetch]);
+  const featured = useFeaturedVehicles();
+  const { refreshing, onRefresh } = useRefresh([latest.refetch, branches.refetch, featured.refetch]);
   const cardWidth = Math.min(width - spacing.lg * 2, 420);
 
   return (
     <Screen padded={false} refreshing={refreshing} onRefresh={onRefresh} contentStyle={{ gap: spacing.xxl }}>
-      {/* Always-dark hero: brand ink in both themes. */}
-      <View style={{ backgroundColor: colors.ink, padding: spacing.xl, paddingVertical: spacing.xxxl, gap: spacing.lg }}>
-        <Text variant="label" style={{ color: colors.accent }}>
-          Online showroom
-        </Text>
-        <Text variant="display" tone="inverse">
-          Find your next car.
-        </Text>
-        <Text tone="inverse" style={{ opacity: 0.75 }}>
-          Real stock from every branch. Reserve online and collect locally.
-        </Text>
-        <View style={{ gap: spacing.md, marginTop: spacing.sm }}>
-          <Button title="Browse the showroom" variant="inverse" onPress={() => router.push('/cars')} />
-        </View>
-      </View>
+      <CarHeroHeader />
 
       <View style={{ gap: spacing.lg }}>
         <View style={{ paddingHorizontal: spacing.lg }}>

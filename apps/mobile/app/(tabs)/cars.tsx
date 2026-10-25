@@ -1,3 +1,4 @@
+import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
 import { BottomSheet } from '@/components/panel/bottom-sheet';
@@ -14,6 +15,16 @@ export default function CarsScreen() {
   const [filters, setFilters] = useState<PanelFilters>({ sort: 'newest' });
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
+  // The home hero opens this tab with ?q=… (search) or ?sort=… (e.g. "View Deals" → lowest price first).
+  const params = useLocalSearchParams<{ q?: string; sort?: string }>();
+  const [applied, setApplied] = useState<{ q?: string; sort?: string }>({});
+  if (params.q !== applied.q || params.sort !== applied.sort) {
+    // Applied while rendering (React's "adjust state on prop change" pattern) so the first paint already has the term.
+    setApplied({ q: params.q, sort: params.sort });
+    if (typeof params.q === 'string') setSearch(params.q.slice(0, 100));
+    const sort = params.sort;
+    if (sort === 'newest' || sort === 'price_asc' || sort === 'price_desc') setFilters((f) => ({ ...f, sort }));
+  }
   const { availableOnly, ...apiFilters } = filters;
   const query = useVehicles(apiFilters);
   const count = activeFilterCount(apiFilters) + (availableOnly ? 1 : 0);

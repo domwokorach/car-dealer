@@ -7,6 +7,7 @@ import { spacing } from '@/theme';
 export function Screen({
   children,
   scroll = true,
+  scrollEnabled = true,
   padded = true,
   onRefresh,
   refreshing = false,
@@ -15,6 +16,8 @@ export function Screen({
 }: {
   children: ReactNode;
   scroll?: boolean;
+  /** False while a child owns the touch (a 3D viewer being turned), so the page does not scroll underneath it. */
+  scrollEnabled?: boolean;
   padded?: boolean;
   onRefresh?: () => void;
   refreshing?: boolean;
@@ -27,6 +30,7 @@ export function Screen({
     <View className="flex-1 bg-background">
       {scroll ? (
         <ScrollView
+          scrollEnabled={scrollEnabled}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="interactive"
           contentInsetAdjustmentBehavior="automatic"

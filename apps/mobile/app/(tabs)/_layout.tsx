@@ -1,5 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Tabs } from 'expo-router';
+import { router, Tabs } from 'expo-router';
+import { Pressable } from 'react-native';
 import type { ColorValue } from 'react-native';
 import { useColors } from '@/theme';
 
@@ -24,7 +25,19 @@ export default function TabsLayout() {
         sceneStyle: { backgroundColor: c.background },
       }}
     >
-      <Tabs.Screen name="index" options={{ title: 'Car Dealer', tabBarLabel: 'Home', tabBarIcon: icon('home-outline', 'home') }} />
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Car Dealer',
+          tabBarLabel: 'Home',
+          tabBarIcon: icon('home-outline', 'home'),
+          headerRight: () => (
+            <Pressable accessibilityRole="button" accessibilityLabel="Your account" hitSlop={12} onPress={() => router.push('/account')} style={{ marginRight: 16 }}>
+              <Ionicons name="person-circle-outline" size={28} color={c.foreground} />
+            </Pressable>
+          ),
+        }}
+      />
       <Tabs.Screen name="cars" options={{ title: 'Showroom', tabBarLabel: 'Cars', tabBarIcon: icon('car-sport-outline', 'car-sport') }} />
       <Tabs.Screen name="saved" options={{ title: 'Saved cars', tabBarLabel: 'Saved', tabBarIcon: icon('heart-outline', 'heart') }} />
       <Tabs.Screen name="account" options={{ title: 'Account', tabBarLabel: 'Account', tabBarIcon: icon('person-outline', 'person') }} />

@@ -8,6 +8,7 @@ import { Screen } from '@/components/layout/screen';
 import { SectionHeader } from '@/components/layout/section-header';
 import { Badge, Button, EmptyState, ErrorState, LoadingState, Text } from '@/components/ui';
 import { useMe, useMyReservations, useMyTestDrives } from '@/features/authentication/api/queries';
+import { isStaffUser } from '@/features/media/lib/is-staff';
 import { ReservationCard } from '@/features/reservations/components/reservation-card';
 import { useRefresh } from '@/hooks/use-refresh';
 import { useAuth } from '@/providers/auth-provider';
@@ -114,6 +115,7 @@ export default function AccountScreen() {
         <ThemeSelector label="Theme" />
       </View>
 
+      {isStaffUser(me.data) ? <Button title="Manage vehicle photos" variant="secondary" onPress={() => router.push('/staff/photos')} /> : null}
       <Button title="Contact support" variant="secondary" onPress={() => router.push('/support')} />
       {signedIn ? <Button title="Sign out" variant="secondary" onPress={() => void signOut()} /> : null}
       {__DEV__ ? <ConnectionCheck /> : null}

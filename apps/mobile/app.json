@@ -29,6 +29,7 @@
       "expo-secure-store",
       "expo-image",
       "expo-dev-client",
+      "expo-asset",
       "@maplibre/maplibre-react-native",
       [
         "expo-camera",
@@ -40,7 +41,8 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Car Dealer needs photo access so you can choose pictures to upload."
+          "photosPermission": "Car Dealer needs photo access so you can choose pictures to upload.",
+          "cameraPermission": "Car Dealer uses the camera to photograph vehicles."
         }
       ],
       [
